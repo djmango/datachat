@@ -8,10 +8,10 @@ Base = declarative_base()
 
 class CnnBase(BaseModel):
     # https://docs.pydantic.dev/latest/usage/models/
-    created_at: Optional[datetime] = Field(None, description="The creation datetime of the CNN entry.")
-    category: Optional[str] = Field(None, description="The category of the CNN entry.")
-    title: Optional[str] = Field(None, description="The title of the CNN entry.")
-    link: Optional[str] = Field(None, description="The link of the CNN entry.")
+    created_at: Optional[datetime] = Field(None, description="The creation datetime of the entry.")
+    id: Optional[str] = Field(None, description="The int id of the entry")
+    title: Optional[str] = Field(None, description="The title of the CNN article.")
+    link: Optional[str] = Field(None, description="The link of the CNN article.")
 
 class Cnn(Base):
     __tablename__ = "cnn"
