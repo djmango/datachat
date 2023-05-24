@@ -7,6 +7,7 @@ from datetime import datetime
 Base = declarative_base()
 
 class CnnBase(BaseModel):
+    # https://docs.pydantic.dev/latest/usage/models/
     created_at: Optional[datetime] = Field(None, description="The creation datetime of the CNN entry.")
     category: Optional[str] = Field(None, description="The category of the CNN entry.")
     title: Optional[str] = Field(None, description="The title of the CNN entry.")
