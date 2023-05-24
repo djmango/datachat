@@ -4,13 +4,12 @@
   "name_for_model": "datachat",
   "description_for_human": "Chat and get actionable insights from real-time finance, market, and sentiment data, Amazon, Twitter, Walmart, etc",
   "description_for_model": "Hyperdata is an advanced, machine learning-powered plugin designed to revolutionize the way you interact with the stock market. Fueled by an extensive library of web-scraped and financial alternative data, it aims to level the playing field for individual investors by providing cutting-edge tools that have traditionally been accessible only to hedge fund analysts. By harnessing the potential of large data sets, this plugin conducts intricate market trend analysis, empowering you to make informed investment decisions. Hyperdata's predictive capabilities range from forecasting stock market trends to suggesting potential high-growth opportunities based on a multitude of parameters.",
-
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:8000/openapi.yaml",
+    "url": "http://localhost:8000/openapi.json",
     "is_user_authenticated": false
   },
   "logo_url": "http://localhost:8000/logo.png",
