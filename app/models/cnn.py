@@ -1,7 +1,17 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
+from pydantic import BaseModel, Field
+from typing import Optional
+from datetime import datetime
 
 Base = declarative_base()
+
+class CnnBase(BaseModel):
+    # https://docs.pydantic.dev/latest/usage/models/
+    created_at: Optional[datetime] = Field(None, description="The creation datetime of the CNN entry.")
+    category: Optional[str] = Field(None, description="The category of the CNN entry.")
+    title: Optional[str] = Field(None, description="The title of the CNN entry.")
+    link: Optional[str] = Field(None, description="The link of the CNN entry.")
 
 class Cnn(Base):
     __tablename__ = "cnn"
