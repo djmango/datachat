@@ -13,6 +13,9 @@ class CnnBase(BaseModel):
     title: Optional[str] = Field(None, description="The title of the CNN article.")
     link: Optional[str] = Field(None, description="The link of the CNN article.")
 
+    class Config:
+       orm_mode = True
+
 class Cnn(Base):
     __tablename__ = "cnn"
 

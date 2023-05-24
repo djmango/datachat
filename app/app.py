@@ -6,10 +6,9 @@ import uvicorn
 from app.handlers.exception_handler import exception_handler
 from app.middlewares.correlation_id_middleware import CorrelationIdMiddleware
 from app.middlewares.logging_middleware import LoggingMiddleware
-from app.routes import well_known_router
 # from app.middlewares.trailing_slash_middleware import TrailingSlashMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import helloworld_router
+from app.routes import helloworld_router, well_known_router, scraper_router
                         
 from fastapi import FastAPI
 
@@ -29,6 +28,7 @@ app.add_middleware(CorrelationIdMiddleware)
 
 app.include_router(helloworld_router.router, prefix='/hello', tags=['Hello'])
 app.include_router(well_known_router.router, prefix='/.well-known', tags=['Well Known', 'OpenAI'])
+app.include_router(scraper_router.router, prefix='/scraper', tags=['Scraper'])
 
 
 @app.get("/")
