@@ -8,7 +8,7 @@ from app.middlewares.correlation_id_middleware import CorrelationIdMiddleware
 from app.middlewares.logging_middleware import LoggingMiddleware
 # from app.middlewares.trailing_slash_middleware import TrailingSlashMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import helloworld_router, well_known_router, scraper_router
+from app.routes import helloworld_router, well_known_router, data_router
                         
 from fastapi import FastAPI
 
@@ -28,7 +28,7 @@ app.add_middleware(CorrelationIdMiddleware)
 
 app.include_router(helloworld_router.router, prefix='/hello', tags=['Hello'])
 app.include_router(well_known_router.router, prefix='/.well-known', tags=['Well Known', 'OpenAI'])
-app.include_router(scraper_router.router, prefix='/scraper', tags=['Scraper'])
+app.include_router(data_router.router, prefix='/data', tags=['Data', 'OpenAI'])
 
 
 @app.get("/")

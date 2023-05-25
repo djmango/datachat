@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 from app.models.cnn import CnnBase as Cnn, Cnn as CnnModel
-from app.db import get_db_scraping
+from app.db import get_db_text
 
 
 # Assuming you have already defined get_db
@@ -10,7 +10,7 @@ from app.db import get_db_scraping
 router = APIRouter( responses={404: {"description": "Not found"}})
 
 @router.get("/cnn", response_model=List[Cnn])
-async def read_cnns(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_scraping)):
+async def read_cnns(skip: int = 0, limit: int = 100, db: Session = Depends(get_db_text)):
     """ 
     Retrieve CNN entries.
     
