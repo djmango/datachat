@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import Session
-from app.models.pydantic_models import pydantic_models
+from app.models.pydantic_models import PydanticModelName, pydantic_models
 import os
 from typing import AsyncGenerator
 
@@ -30,7 +30,7 @@ def get_db_numeric():
     finally:
         db.close()
 
-async def get_db(model_name: str) -> AsyncGenerator[Session, None]:
+async def get_db(model_name: PydanticModelName) -> AsyncGenerator[Session, None]:
     datatype = pydantic_models[model_name]._datatype
     db = None
     try:
