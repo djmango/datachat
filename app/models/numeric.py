@@ -24,7 +24,7 @@ class NumericBase(BaseModel):
     link: Optional[str] = Field(None, description="The link of the CNN article.")
     class Config:
        orm_mode = True
-    _db = Cnn
+    _db = Numeric
     _datatype = "text"
     class Config:
        orm_mode = True
