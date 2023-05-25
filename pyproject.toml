@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "datachat"
+name = "HyperData"
 version = "0.1.0"
 description = ""
 authors = ["Sulaiman Ghori <sulaiman.ghori@outlook.com>", "Judah Cooper <>"]

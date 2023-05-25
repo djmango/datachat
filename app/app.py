@@ -16,7 +16,7 @@ from fastapi import FastAPI
 HERE = Path(__file__).parent
 DEBUG = True if os.getenv('DEBUG') == '1' else False
 
-app = FastAPI(title='DataChat API', description='BUILDSPACE', version="0.1.0", debug=DEBUG)
+app = FastAPI(title='HyperData API', description='BUILDSPACE', version="0.1.0", debug=DEBUG)
 
 app.add_exception_handler(Exception, exception_handler)
 
