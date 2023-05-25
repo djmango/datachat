@@ -45,3 +45,6 @@ class RedditBase(BaseModel):
     created : Optional[str] = Field(None, description="The unix time creation of the post")
     _db = Reddit
     _datatype = "text"
+
+    class Config:
+       orm_mode = True

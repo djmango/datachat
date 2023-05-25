@@ -32,3 +32,6 @@ class AmazonBase(BaseModel):
     raters : Optional[int] = Field(None, description="The number of people who rated the product")
     _db = Amazon
     _datatype = "text"
+
+    class Config:
+       orm_mode = True

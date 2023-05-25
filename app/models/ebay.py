@@ -29,3 +29,6 @@ class EbayBase(BaseModel):
     discount : Optional[str] = Field(None, description="The dicount on the product")
     _db = Ebay
     _datatype = "text"
+
+    class Config:
+       orm_mode = True

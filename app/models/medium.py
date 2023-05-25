@@ -18,6 +18,7 @@ class Medium(Base):
     main_title = Column(String(1000))
     second_title_text = Column(String(1000))
 
+
 class MediumBase(BaseModel):
     # https://docs.pydantic.dev/latest/usage/models/
     id : Optional[int] = Field(None, description="The id index")
@@ -30,3 +31,6 @@ class MediumBase(BaseModel):
     second_title_text : Optional[str] = Field(None, description="A secondary title for the article")
     _db = Medium
     _datatype = "text"
+    
+    class Config:
+       orm_mode = True
