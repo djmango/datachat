@@ -6,7 +6,6 @@ from datetime import datetime
 
 Base = declarative_base()
 
-
 class Cnn(Base):
     __tablename__ = "cnn"
 
