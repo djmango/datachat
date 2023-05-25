@@ -6,18 +6,6 @@ from datetime import datetime
 
 Base = declarative_base()
 
-class AmazonBase(BaseModel):
-    # https://docs.pydantic.dev/latest/usage/models/
-    id : Optional[int] = Field(None, description="The id index")
-    created_at : Optional[datetime] = Field(None, description="The date the entry was created")
-    title : Optional[str] = Field(None, description="The title of the amazon product")
-    link : Optional[datetime] = Field(None, description="The url to the amazon product")
-    image : Optional[datetime] = Field(None, description="The link to the image")
-    price : Optional[datetime] = Field(None, description="The price of the product")
-    stars : Optional[datetime] = Field(None, description="The average number of stars on the product")
-    prime : Optional[datetime] = Field(None, description="The amazon prime status of the product")
-    raters : Optional[datetime] = Field(None, description="The number of people who rated the product")
-
 class Amazon(Base):
     __tablename__ = "amazon"
 
@@ -30,3 +18,17 @@ class Amazon(Base):
     stars = Column(Float)  # assuming stars is a float
     prime = Column(String(100))  # assuming the text won't be longer than 100 characters
     raters = Column(Integer)  # number of raters
+
+class AmazonBase(BaseModel):
+    # https://docs.pydantic.dev/latest/usage/models/
+    id : Optional[int] = Field(None, description="The id index")
+    created_at : Optional[datetime] = Field(None, description="The date the entry was created")
+    title : Optional[str] = Field(None, description="The title of the amazon product")
+    link : Optional[str] = Field(None, description="The url to the amazon product")
+    image : Optional[str] = Field(None, description="The link to the image")
+    price : Optional[str] = Field(None, description="The price of the product")
+    stars : Optional[float] = Field(None, description="The average number of stars on the product")
+    prime : Optional[str] = Field(None, description="The amazon prime status of the product")
+    raters : Optional[int] = Field(None, description="The number of people who rated the product")
+    _db = Amazon
+    _datatype = "text"

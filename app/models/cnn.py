@@ -6,13 +6,6 @@ from datetime import datetime
 
 Base = declarative_base()
 
-class CnnBase(BaseModel):
-    # https://docs.pydantic.dev/latest/usage/models/
-    created_at: Optional[datetime] = Field(None, description="The creation datetime of the entry.")
-    id: Optional[str] = Field(None, description="The int id of the entry")
-    title: Optional[str] = Field(None, description="The title of the CNN article.")
-    link: Optional[str] = Field(None, description="The link of the CNN article.")
-
 class Cnn(Base):
     __tablename__ = "cnn"
 
@@ -21,3 +14,12 @@ class Cnn(Base):
     category = Column(String(500))  # assuming the URL won't be longer than 500 characters
     title = Column(String(500))  # assuming the text won't be longer than 500 characters
     link = Column(String(500))  # assuming the URL won't be longer than 500 characters
+
+class CnnBase(BaseModel):
+    # https://docs.pydantic.dev/latest/usage/models/
+    created_at: Optional[datetime] = Field(None, description="The creation datetime of the entry.")
+    id: Optional[str] = Field(None, description="The int id of the entry")
+    title: Optional[str] = Field(None, description="The title of the CNN article.")
+    link: Optional[str] = Field(None, description="The link of the CNN article.")
+    _db = Cnn
+    _datatype = "text"
