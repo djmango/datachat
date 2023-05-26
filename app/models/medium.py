@@ -11,7 +11,7 @@ class Medium(Base):
 
     id = Column(Integer, primary_key=True)
     created_at = Column(DateTime)
-    title = Column(String(500)) 
+    # title = Column(String(500)) 
     article_image_icon = Column(String(500))  
     writer_name = Column(String(500)) 
     writer_group = Column(String(500))  
@@ -23,7 +23,7 @@ class MediumBase(BaseModel):
     # https://docs.pydantic.dev/latest/usage/models/
     id : Optional[int] = Field(None, description="The id index")
     created_at : Optional[datetime] = Field(None, description="The date the entry was created")
-    title : Optional[str] = Field(None, description="The title of the ebay product")
+    # title : Optional[str] = Field(None, description="The title of the ebay product")
     article_image_icon : Optional[str] = Field(None, description="The link to the image")
     writer_name : Optional[str] = Field(None, description="The name of the author")
     writer_group : Optional[str] = Field(None, description="The company that the writer works for")

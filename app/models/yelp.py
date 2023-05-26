@@ -16,7 +16,7 @@ class Yelp(Base):
     image = Column(String(500)) 
     price_category = Column(String(500))  
     when_opened = Column(String(1000))
-    resturant_overview = Column(String(3000))
+    # resturant_overview = Column(String(3000))
 
 
 class YelpBase(BaseModel):
@@ -28,6 +28,10 @@ class YelpBase(BaseModel):
     image : Optional[str] = Field(None, description="The image of the resturant")
     price_category : Optional[str] = Field(None, description="The category of food and the price rage of the resturant")
     when_opened : Optional[str] = Field(None, description="The opening time of the resturant or the day that it opened")
-    resturant_overview : Optional[str] = Field(None, description="The review of the resturant written by customers")
+    # resturant_overview : Optional[str] = Field(None, description="The review of the resturant written by customers")
+
+    class Config:
+       orm_mode = True
+
     _db = Yelp
     _datatype = "text"

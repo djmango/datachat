@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime,Float
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from pydantic import BaseModel, Field
 from typing import Optional

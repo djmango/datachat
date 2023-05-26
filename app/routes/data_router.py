@@ -14,7 +14,7 @@ router = APIRouter()
 async def get_data(
     model_name: PydanticModelName,
     skip: int = 0,
-    limit: int = 100,
+    limit: int = 50,
     db: Session = Depends(get_db),
 ):
     """
