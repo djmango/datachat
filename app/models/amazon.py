@@ -27,9 +27,9 @@ class AmazonBase(BaseModel):
     link : Optional[str] = Field(None, description="The url to the amazon product")
     image : Optional[str] = Field(None, description="The link to the image")
     price : Optional[str] = Field(None, description="The price of the product")
-    stars : Optional[float] = Field(None, description="The average number of stars on the product")
+    stars : Optional[str] = Field(None, description="The average number of stars on the product")
     prime : Optional[str] = Field(None, description="The amazon prime status of the product")
-    raters : Optional[int] = Field(None, description="The number of people who rated the product")
+    raters : Optional[str] = Field(None, description="The number of people who rated the product")
     _db = Amazon
     _datatype = "text"
 
